@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'third_page.dart';
 
 class SecondPage extends StatelessWidget {
   const SecondPage({super.key});
@@ -6,13 +7,32 @@ class SecondPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Second Page')),
+      appBar: AppBar(
+        title: const Text('Second Page'),
+      ),
       body: Center(
-        child: ElevatedButton(
-          child: const Text('Kembali'),
-          onPressed: () {
-            Navigator.pop(context);
-          },
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ThirdPage(),
+                  ),
+                );
+              },
+              child: const Text('Ke Halaman Ketiga'),
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text('Kembali ke First Page'),
+            ),
+          ],
         ),
       ),
     );
