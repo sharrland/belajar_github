@@ -7,7 +7,7 @@ class ThirdPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Third Page'),
+        title: const Text('halaman ketiga'),
       ),
       body: Center(
         child: Column(
